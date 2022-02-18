@@ -15,6 +15,16 @@ services:
     ports:
       - "6379:6379"
 
+  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/dovker.sock
+      - portainer_data:/data
+
   catalog.api:
     container_name: catalog.api
     environment:
@@ -33,4 +43,4 @@ services:
     depends_on:
       - basketdb
     ports:
-      - "8001:81"
+      - "8001:80"
