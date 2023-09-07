@@ -1,7 +1,13 @@
-﻿@page
+﻿﻿@page
+
+
 @model IndexModel
+
+
 @{
     ViewData["Title"] = "Home page";
+
+
 }
 
 <hr />
@@ -32,7 +38,7 @@
             </div>
         </div>
 
-        <partial name="_TopProductPartial" model="Model.ProductList.FirstOrDefault()" />       
+        <partial name="_TopProductPartial" model="Model.ProductList.FirstOrDefault()" />
 
     </div>
 </div>
@@ -47,18 +53,19 @@
                 <div class="card-body">
                     <div class="row">
 
-                        @foreach (var product in Model.ProductList.Take(4))
-                        {
-                            <div class="col-sm">
-                                <partial name="_ProductItemPartial" model="@product" />
-                            </div>
-                        }
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+@foreach (var product in Model.ProductList.Take(4))
+                        {
+                        <div class="col-sm">
+                            <partial name="_ProductItemPartial" model="@product" />
+                            </div>
+}
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <div class="container mt-3 mb-4">
@@ -70,17 +77,18 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        
-                            @foreach (var product in Model.ProductList.TakeLast(4))
+
+
+@foreach (var product in Model.ProductList.TakeLast(4))
                             {
-                                <div class="col-sm">
-                                    <partial name="_ProductItemPartial" model="@product" />
-                                </div>
-                            }
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                        <div class="col-sm">
+                            <partial name="_ProductItemPartial" model="@product" />
+                            </div>
+}
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>

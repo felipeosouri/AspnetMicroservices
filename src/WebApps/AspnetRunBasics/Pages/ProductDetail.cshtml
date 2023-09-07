@@ -1,7 +1,13 @@
-﻿@page "/Product/{productId}"
+﻿﻿@page "/Product/{productId}"
+
+
 @model AspnetRunBasics.ProductDetailModel
+
+
 @{
     ViewData["Title"] = "ProductDetail";
+
+
 }
 
 <div class="container">
@@ -11,7 +17,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a asp-page="Index">Home</a></li>
                     <li class="breadcrumb-item"><a asp-page="Product">Product</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">@Model.Product.Name</li>
+                    <li class="breadcrumb-item active" aria-current="page">e</li>
                 </ol>
             </nav>
         </div>
@@ -26,7 +32,7 @@
                 <div class="card-body">
                     <a href="" data-toggle="modal" data-target="#productModal">
                         <img class="img-fluid" src="~/images/product/@Model.Product.ImageFile.Replace('-','x')" />
-                        <p class="text-center">@Model.Product.Name</p>
+                        <p class="text-center">e</p>
                     </a>
                 </div>
             </div>
@@ -36,7 +42,7 @@
         <div class="col-12 col-lg-6 add_to_cart_block">
             <div class="card bg-light mb-3">
                 <div class="card-body">
-                    <p class="price">@Model.Product.Price $</p>
+                    <p class="price">e $</p>
                     <p class="price_discounted">@(Model.Product.Price + 120) $</p>
                     <form asp-page-handler="AddToCart" method="post" name="addToCartForm" id="add_cart_form">
                         <div class="form-group">
@@ -101,14 +107,16 @@
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-align-justify"></i> Description</div>
                 <div class="card-body">
                     <p class="card-text">
-                        @Model.Product.Summary                        
-                    </p>
-                    <p class="card-text">
-                        @Model.Product.Description                        
-                    </p>
-                </div>
-            </div>
-        </div>
 
-    </div>
+@Model.Product.Summary
+</p>
+<p class="card-text">
+
+@Model.Product.Description
+</p>
+</div>
+</div>
+</div>
+
+</div>
 </div>
